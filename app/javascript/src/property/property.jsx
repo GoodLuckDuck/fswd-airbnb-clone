@@ -19,6 +19,7 @@ class Property extends React.Component {
         this.setState({
           property: data.property,
           loading: false,
+          
         })
       })
   }

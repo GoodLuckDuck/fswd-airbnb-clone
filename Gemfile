@@ -36,8 +36,6 @@ gem 'bcrypt', '~> 3.1'
 # gem 'image_processing', '~> 1.2'
 # AWS S3
 gem 'aws-sdk-s3', '~> 1.114'
-# Webrick
-gem 'webrick', '~> 1.7'
 # Mail gem
 gem 'mail', '>= 2.8.0.rc1'
 

@@ -43,6 +43,19 @@ class LoginWidget extends React.Component {
     }
   }
 
+  logout = async () => {
+    try {
+      const response = await fetch('/api/sessions', safeCredentials({
+        method: 'DELETE',
+      }));
+      
+      await handleErrors(response);
+      window.location = '/login'; // Redirect to login page after logout
+    } catch (error) {
+      this.setState({ error: 'Could not log out.' });
+    }
+  }
+
   render() {
     const { email, password, error } = this.state;
     return (
@@ -71,6 +84,7 @@ class LoginWidget extends React.Component {
         </form>
         <hr />
         <p className="mb-0">Don't have an account? <a className="text-primary" onClick={this.props.toggle}>Sign up</a></p>
+        <button onClick={this.logout} className="btn btn-secondary btn-block btn-lg mt-3">Log out</button>
       </React.Fragment>
     );
   }

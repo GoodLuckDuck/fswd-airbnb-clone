@@ -6,3 +6,44 @@
       height: 400px;
     }
   }
+
+  .amenities ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap into multiple lines */
+    justify-content: center; /* Centers the items horizontally */
+    align-items: flex-start; /* Aligns items at the start */
+    background-color: #f8f9fa; /* Light background color to match a typical website */
+    padding: 20px; /* Adds padding for spacing */
+    border-top: 1px solid #dee2e6; /* Subtle border to separate from content above */
+  }
+  
+  footer .list-unstyled {
+    display: flex; /* Makes the list a flex container */
+    flex-wrap: wrap; /* Allows the list items to wrap into rows */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    width: 100%; /* Ensures the list takes full width */
+  }
+  
+  footer .list-unstyled li {
+    width: 50%; /* Each item takes up half the width, creating two columns */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    margin-bottom: 10px; /* Adds space between rows */
+    text-align: center; /* Centers the text within each list item */
+  }
+  
+  footer .list-unstyled li a {
+    color: #007bff; /* Link color to match typical website links */
+    text-decoration: none; /* Removes underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  footer .list-unstyled li a:hover {
+    color: #0056b3; /* Darker color on hover for better visibility */
+  }

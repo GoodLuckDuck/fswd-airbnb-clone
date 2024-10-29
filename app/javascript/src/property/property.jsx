@@ -10,6 +10,16 @@ class Property extends React.Component {
   state = {
     property: {},
     loading: true,
+    amenities: [
+      'Wi-Fi',
+      'Air Conditioning',
+      'Kitchen',
+      'Parking',
+      'Pool',
+      'Gym',
+      'TV',
+      'Breakfast Included',
+    ],
   }
 
   componentDidMount() {
@@ -19,13 +29,12 @@ class Property extends React.Component {
         this.setState({
           property: data.property,
           loading: false,
-          
         })
       })
   }
 
   render () {
-    const { property, loading } = this.state;
+    const { property, loading, amenities } = this.state;
     if (loading) {
       return <p>loading...</p>;
     };
@@ -68,6 +77,14 @@ class Property extends React.Component {
               </div>
               <hr />
               <p>{description}</p>
+              <div className="amenities">
+                <h5>Amenities</h5>
+                <ul>
+                  {amenities.map((amenity, index) => (
+                    <li key={index}>{amenity}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="col-12 col-lg-5">
               <BookingWidget property_id={id} price_per_night={price_per_night} />
@@ -79,4 +96,4 @@ class Property extends React.Component {
   }
 }
 
-export default Property
+export default Property;

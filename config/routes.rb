@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   get '/property/:id' => 'static_pages#property'
   get '/login' => 'static_pages#login'
+  
+  # Add the success route for bookings
+  get '/booking/:id/success' => 'static_pages#booking_success', as: 'booking_success'
 
   namespace :api do
-    # Add routes below this line
     resources :users, only: [:create]
     resources :sessions, only: [:create, :destroy]
     resources :properties, only: [:index, :show]
@@ -18,5 +20,4 @@ Rails.application.routes.draw do
     # stripe webhook
     post '/charges/mark_complete' => 'charges#mark_complete'
   end
-
 end

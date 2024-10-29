@@ -44,6 +44,12 @@ class Home extends React.Component {
       })
   }
 
+  saveProperty = (propertyId) => {
+    // Logic to save the property (e.g., save to local storage)
+    console.log(`Property ${propertyId} saved!`);
+    // You can implement actual saving logic here
+  }
+
   render () {
     const { properties, next_page, loading } = this.state;
     return (
@@ -61,6 +67,12 @@ class Home extends React.Component {
                     <h6 className="mb-0">{property.title}</h6>
                     <p className="mb-0"><small>${property.price_per_night} USD/night</small></p>
                   </a>
+                  <button
+                    className="btn btn-primary mt-2"
+                    onClick={() => this.saveProperty(property.id)}
+                  >
+                    Save
+                  </button>
                 </div>
               )
             })}
@@ -79,6 +91,7 @@ class Home extends React.Component {
     )
   }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Home />,
